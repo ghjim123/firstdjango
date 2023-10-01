@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-xxl py-6" id="AI_taste">
+    <div class="container">
+        <h1 class="display-6 mb-4">A.I.體驗</h1>
+        <hr>
+        <h3 class="fw-normal lh-base fst-italic">情緒偵測</h3>
+        <div class="container">
+            <div class="row text-center align-items-start emotion-items">
+
+                <span class="mt-5">
+                    <h4>{{sentences}}</h4>　might　be:<h2>{{label}}</h2>
+                </span>
+                <form action="emotion" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row ">
+                        <div class="form-group col-lg-12 col-md-12 ">
+                            <input class="wordarea" type="text" autofocus placeholder="輸入欲偵測的句子" name="sentences">
+                            <input class="btn btn-primary" type="submit" value="偵測" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

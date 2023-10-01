@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Home Start -->
+    <div class="container-fluid home-header home-header-bg p-0">
+        <div class="container-xxl" id="index">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-12 text-center ">
+                        <h1 class="text-white mb-4 animated zoomIn">關於 A.I.Lab</h1>
+                        <p class="text-white animated fs-3 zoomIn">主要推廣A.I.科普，搭配圖表和實例演練的方式分享A.I.專業知識，希望可以讓越來越多的人能了解A.I.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Home End -->
+
+    <!-- Service Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <h1 class="display-6 mb-4">A.I.體驗</h1>
+            <hr>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="store-item position-relative">
+                        <div class="service-item rounded h-100">
+                            <a class="service-btn" href="image_detection">
+                                <div class="p-5">
+                                    <i class="fa fa-link fa-2x">圖片辨識</i><br>
+                                    <h5 class="py-2">上傳圖片進行 <b>名稱識別</b></h5>
+                                </div>
+                                <span></span>
+                                <img class="img-fluid"  src="../static/img/Image_detection.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="store-item position-relative">
+                        <div class="service-item rounded h-100">
+                            <a class="service-btn" href="emotion">
+                                <div class="p-5">
+                                    <i class="fa fa-link fa-2x">情緒偵測</i><br>
+                                    <h5 class="py-2">輸入英文句子進行 <b>情緒判斷</b></h5>
+                                </div>
+                                <img class="img-fluid"  src="../static/img/Emotion.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Information Start -->
+    <div class="container-fluid information my-5 py-3">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-12  py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="py-5">
+                        <h1 class="display-6 mb-4">相關知識</h1>
+                        <hr>
+                        <div class="row g-4 mb-5">
+
+                            {% for d in infodatas %}
+                            <div class="col-lg-4 col-md-6">
+                            <a class="btn btn-light rounded-pill py-3 px-5" href="info">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                        <i class="fa fa-user-tie fa-2x"></i>
+                                    </div>
+                                    <span class="text-dark fs-3">{{d.4}}</span>
+                                </div>
+                            </a>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-12  py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-4">模型介紹</h1>
+                    <hr>
+                    <div class="row g-4 mb-5">
+                        {% for d in introdatas %}
+                        <div class="col-lg-4 col-md-6">
+                            <a class="btn btn-light rounded-pill py-3 px-5" href="intro">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
+                                    <i class="fa fa-user-tie fa-2x"></i>
+                                    </div>
+                                    <span class="text-dark fs-3">{{d.6}}</span>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Information End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <h1 class="display-6 mb-4">我們的團隊</h1>
+            <hr>
+            <div class="row g-4">
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <h5>Full Name</h5>
+                        <p class="mb-4">Designation</p>
+                        <img class="img-fluid rounded-circle w-100 mb-4" src="../static/img/team-1.jpg" alt="">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <h5>Full Name</h5>
+                        <p class="mb-4">Designation</p>
+                        <img class="img-fluid rounded-circle w-100 mb-4" src="../static/img/team-2.jpg" alt="">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <h5>Full Name</h5>
+                        <p class="mb-4">Designation</p>
+                        <img class="img-fluid rounded-circle w-100 mb-4" src="../static/img/team-3.jpg" alt="">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <h5>Full Name</h5>
+                        <p class="mb-4">Designation</p>
+                        <img class="img-fluid rounded-circle w-100 mb-4" src="../static/img/team-4.jpg" alt="">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <h5>Full Name</h5>
+                        <p class="mb-4">Designation</p>
+                        <img class="img-fluid rounded-circle w-100 mb-4" src="../static/img/team-5.jpg" alt="">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <h5>Full Name</h5>
+                        <p class="mb-4">Designation</p>
+                        <img class="img-fluid rounded-circle w-100 mb-4" src="../static/img/team-6.jpg" alt="">
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+{% endblock  %}

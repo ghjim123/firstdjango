@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-xxl py-6" id="manage-item">
+    <div class="container py-4">
+        <div class="row">
+            <h1 class="col-lg-3 col-md-3  display-6 mb-4">模型介紹 管理</h1>
+            <div class="col-lg-2 col-md-2" >
+                <form action="infodata_add" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="col-lg-12 col-md-12 btn btn-secondary" value="新增"></td>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-6">
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <a  class="btn btn-light justify-content-end" href="manage_logout"><h6>登出</h6></a>
+            </div>
+        </div>
+        <hr>
+        <div class="row g-4 mb-5" >
+            {% for d in infodatas %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="row">
+                        <h5 class="col-lg-6 col-md-6 text-center">{{d.4}}</h5>
+                        <button class="col-lg-3 col-md-3 btn btn-light" id="{{d.1}}">修改</button>
+                        <form class="col-lg-3 col-md-3" action="infodata_delete" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" class="col-lg-12 col-md-12" name="Info-items" value="{{d.0}}">
+                            <input type="submit" class="col-lg-12 col-md-12 btn btn-dark" value="刪除">
+                        </form>
+                    </div>
+                    <div id="{{d.0}}" class="manage-edit">
+                        <form class="col-md-12" action="infodata_edit" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <table border="2" >
+                                <tr>
+                                    <td>title</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="title" value="{{d.4}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>id位置</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="Info-items" value="{{d.0}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>按鈕位置</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="btn" value="{{d.1}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>內容</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="content" value="{{d.2}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>圖片位置</td>
+                                    <td>{{d.3}}{{ form.image }}</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" class="col-lg-12 col-md-12 btn btn-light" value="確定"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container py-4">
+        <div class="row">
+            <h1 class="col-lg-3 col-md-3  display-6 mb-4">模型介紹 管理</h1>
+                <form class="col-lg-2 col-md-2" action="introdata_add" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="col-lg-12 col-md-12 btn btn-secondary" value="新增"></td>
+                </form>
+            </div>
+        <hr>
+        <div class="row g-4 mb-5" >
+            {% for d in introdatas %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="row">
+                        <h5 class="col-lg-6 col-md-6 text-center">{{d.6}}</h5>
+                        <button class="col-lg-3 col-md-3 btn btn-light" id="{{d.1}}">修改</button>
+                        <form class="col-lg-3 col-md-3" action="introdata_delete" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" class="col-lg-12 col-md-12" name="Intro-items" value="{{d.0}}">
+                            <input type="submit" class="col-lg-12 col-md-12 btn btn-dark" value="刪除">
+                        </form>
+                    </div>
+                    <div id="{{d.0}}" class="manage-edit">
+                        <form class="col-md-12" action="introdata_edit" method="POST">
+                            {% csrf_token %}
+                            <table border="2">
+                                <tr>
+                                    <td>title</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="title" value="{{d.6}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>id位置</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="Intro-items" value="{{d.0}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>按鈕位置</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="btn" value="{{d.1}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>內容一</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="content-0" value="{{d.2}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>內容二</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="content-1" value="{{d.3}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>內容三</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="content-2" value="{{d.4}}"></td>
+                                </tr>
+                                <tr>
+                                    <td>內容四</td>
+                                    <td><input type="text" class="col-lg-12 col-md-12" name="content-3" value="{{d.5}}"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" class="col-lg-12 col-md-12" value="確定"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock  %}
