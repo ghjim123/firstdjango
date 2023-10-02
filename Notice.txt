@@ -10,6 +10,7 @@
   numpy
   pyrebase4
   keras
+<<<<<<< HEAD
   opencv-python
 
 3.網站起始網頁
@@ -18,3 +19,6 @@
 4.後台管理
   http://127.0.0.1:8000/t_photo_app/manage_data
   帳號：ghjim123 密碼：jim01413
+=======
+  python-OpenCV
+>>>>>>> 04e7180201937f62ec11a6857fc735ac7ce7f381
