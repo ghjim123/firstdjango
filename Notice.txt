@@ -1,6 +1,6 @@
-1.請先將 emotion.zip 解縮後放至 
-  t_photo_upload\t_photo_app\static\media\AI_models 
-  資料夾裡
+1.請先至t_photo_upload\t_photo_app\static\media 
+  建立 AI_models 資料夾
+  並將 emotion.zip 解縮後放至 AI_models 資料夾裡
 
 2.相關套件
   python==3.9
