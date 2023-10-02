@@ -1,0 +1,12 @@
+1.請先將 emotion.zip 解縮後放至 
+  t_photo_upload\t_photo_app\static\media\AI_models 
+  資料夾裡
+
+2.相關套件
+  python==3.9
+  tensorflow==2.10.1
+  django==4.2
+  numpy
+  pyrebase
+  keras
+  opencv
