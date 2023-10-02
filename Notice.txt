@@ -6,7 +6,15 @@
   python==3.9
   tensorflow==2.10.1
   django==4.2
+  Pillow
   numpy
-  pyrebase
+  pyrebase4
   keras
-  opencv
+  opencv-python
+
+3.網站起始網頁
+  http://127.0.0.1:8000/t_photo_app/index
+
+4.後台管理
+  http://127.0.0.1:8000/t_photo_app/manage_data
+  帳號：ghjim123 密碼：jim01413
